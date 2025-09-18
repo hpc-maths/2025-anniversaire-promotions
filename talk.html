@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 <script src="talk_files/libs/clipboard/clipboard.min.js"></script>
 <script src="talk_files/libs/quarto-html/tabby.min.js"></script>
 <script src="talk_files/libs/quarto-html/popper.min.js"></script>
@@ -7,147 +7,120 @@
 <link href="talk_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="talk_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="talk_files/libs/quarto-html/quarto-syntax-highlighting-a6e161b2431e1f94a14e0f5d32135a3c.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.24">
 
-  <meta name="author" content="Loïc Gouarin, Marc Massot">
-  <title>HPC@Maths : Un modèle inédit pour accélérer la recherche et ses applications</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="talk_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="talk_files/libs/revealjs/dist/reveal.css">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-      vertical-align: middle;
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Loïc Gouarin, Marc Massot">
+
+<title>HPC@Maths : Un modèle inédit pour accélérer la recherche et ses applications</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="talk_files/libs/clipboard/clipboard.min.js"></script>
+<script src="talk_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="talk_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="talk_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="talk_files/libs/quarto-html/popper.min.js"></script>
+<script src="talk_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="talk_files/libs/quarto-html/anchor.min.js"></script>
+<link href="talk_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="talk_files/libs/quarto-html/quarto-syntax-highlighting-a6e161b2431e1f94a14e0f5d32135a3c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="talk_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="talk_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="talk_files/libs/bootstrap/bootstrap-9c7fdf86abb7c14ca1bd2e998118a656.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
     }
-  </style>
-  <link rel="stylesheet" href="talk_files/libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
-  <link rel="stylesheet" href="css/light.css">
-  <link href="talk_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="talk_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="talk_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="talk_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
-    .reveal div.sourceCode {
-      margin: 0;
-      overflow: auto;
-    }
-    .reveal div.hanging-indent {
-      margin-left: 1em;
-      text-indent: -1em;
-    }
-    .reveal .slide:not(.center) {
-      height: 100%;
-    }
-    .reveal .slide.scrollable {
-      overflow-y: auto;
-    }
-    .reveal .footnotes {
-      height: 100%;
-      overflow-y: auto;
-    }
-    .reveal .slide .absolute {
-      position: absolute;
-      display: block;
-    }
-    .reveal .footnotes ol {
-      counter-reset: ol;
-      list-style-type: none; 
-      margin-left: 0;
-    }
-    .reveal .footnotes ol li:before {
-      counter-increment: ol;
-      content: counter(ol) ". "; 
-    }
-    .reveal .footnotes ol li > p:first-child {
-      display: inline-block;
-    }
-    .reveal .slide ul,
-    .reveal .slide ol {
-      margin-bottom: 0.5em;
-    }
-    .reveal .slide ul li,
-    .reveal .slide ol li {
-      margin-top: 0.4em;
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide ul[role="tablist"] li {
-      margin-bottom: 0;
-    }
-    .reveal .slide ul li > *:first-child,
-    .reveal .slide ol li > *:first-child {
-      margin-block-start: 0;
-    }
-    .reveal .slide ul li > *:last-child,
-    .reveal .slide ol li > *:last-child {
-      margin-block-end: 0;
-    }
-    .reveal .slide .columns:nth-child(3) {
-      margin-block-start: 0.8em;
-    }
-    .reveal blockquote {
-      box-shadow: none;
-    }
-    .reveal .tippy-content>* {
-      margin-top: 0.2em;
-      margin-bottom: 0.7em;
-    }
-    .reveal .tippy-content>*:last-child {
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide > img.stretch.quarto-figure-center,
-    .reveal .slide > img.r-stretch.quarto-figure-center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-left,
-    .reveal .slide > img.r-stretch.quarto-figure-left  {
-      display: block;
-      margin-left: 0;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-right,
-    .reveal .slide > img.r-stretch.quarto-figure-right  {
-      display: block;
-      margin-left: auto;
-      margin-right: 0; 
-    }
-  </style>
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
+
 <body class="quarto-light">
-  <div class="reveal">
-    <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">HPC@Maths : Un modèle inédit pour accélérer la recherche et ses applications</h1>
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="talk.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Loïc Gouarin, Marc Massot 
-</div>
-</div>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">HPC@Maths : Un modèle inédit pour accélérer la recherche et ses applications</h1>
 </div>
 
-  <p class="date">27 septembre 2025</p>
-</section>
-<section class="slide level2">
 
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Loïc Gouarin, Marc Massot </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">27 septembre 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+
+</div>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <div class="center-page-vertically-2">
 <div class="row">
 <div class="col-8 text-center">
-<p><img data-src="figures/hpc-explain.svg" style="width:60.0%"></p>
+<p><img src="figures/hpc-explain.svg" class="img-fluid" style="width:60.0%"></p>
 </div>
 <div class="col align-self-center border fragment border-2">
 <div class="color-0">
@@ -161,28 +134,22 @@ Loïc Gouarin, Marc Massot
 </div>
 </div>
 </div>
-</section>
-<section class="slide level2">
-
+<hr>
 <div class="center-page">
-<p><img data-src="figures/timeline.png"></p>
+<p><img src="figures/timeline.png" class="img-fluid"></p>
 </div>
-</section>
-<section class="slide level2">
-
+<hr>
 <div class="center-page r-stack">
-<p><img data-src="figures/courbes_1.png" class="fragment fade-out" data-fragment-index="0"></p>
-<p><img data-src="figures/courbes_2.png" class="fragment current-visible" data-fragment-index="0"></p>
-<p><img data-src="figures/courbes_3.png" class="fragment current-visible"></p>
-<p><img data-src="figures/courbes_4.png" class="fragment"></p>
+<p><img src="figures/courbes_1.png" class="fragment fade-out img-fluid" data-fragment-index="0"></p>
+<p><img src="figures/courbes_2.png" class="fragment current-visible img-fluid" data-fragment-index="0"></p>
+<p><img src="figures/courbes_3.png" class="fragment current-visible img-fluid"></p>
+<p><img src="figures/courbes_4.png" class="fragment img-fluid"></p>
 </div>
-</section>
-<section class="slide level2">
-
+<hr>
 <div class="center-page-vertically-2">
 <div class="row">
 <div class="col-7 align-self-center text-center">
-<p><img data-src="figures/achitecture.svg" style="width:80.0%"></p>
+<p><img src="figures/achitecture.svg" class="img-fluid" style="width:80.0%"></p>
 </div>
 <div class="col align-self-center">
 <p><strong>Une complexité à tous les étages</strong></p>
@@ -206,9 +173,8 @@ Loïc Gouarin, Marc Massot
 </div>
 </div>
 </div>
-</section>
-<section id="section" class="slide level2 center" data-background-image="figures/couloir.jpg" data-background-position="left" data-background-size="50%">
-<h2></h2>
+<section id="section" class="level2 center" data-background-image="figures/couloir.jpg" data-background-position="left" data-background-size="50%">
+<h2 class="center anchored" data-background-image="figures/couloir.jpg" data-background-position="left" data-background-size="50%" data-anchor-id="section"></h2>
 <div class="row">
 <div class="col-6">
 
@@ -219,8 +185,8 @@ Loïc Gouarin, Marc Massot
 </div>
 </div>
 </section>
-<section id="evolution-des-méthodes-mathématiques" class="slide level2">
-<h2>Evolution des méthodes mathématiques</h2>
+<section id="evolution-des-méthodes-mathématiques" class="level2">
+<h2 class="anchored" data-anchor-id="evolution-des-méthodes-mathématiques">Evolution des méthodes mathématiques</h2>
 <div class="row">
 <div class="col">
 <p><strong>Progression parallèle à la loi de Moore</strong></p>
@@ -245,16 +211,16 @@ Loïc Gouarin, Marc Massot
 <div class="col-5 r-stack">
 <div class="fragment fade-out" data-fragment-index="0">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/comp_algo_hard.jpg"></p>
+<figure class="figure">
+<p><img src="figures/comp_algo_hard.jpg" class="img-fluid figure-img"></p>
 <figcaption>Source SIAM Review 2001</figcaption>
 </figure>
 </div>
 </div>
 <div class="fragment current-visible" data-fragment-index="0">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/acc_rej_steps_ign_eps3.jpg" style="width:80.0%"></p>
+<figure class="figure">
+<p><img src="figures/acc_rej_steps_ign_eps3.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption>PhD Max Duarte (2011)</figcaption>
 </figure>
 </div>
@@ -263,18 +229,22 @@ Loïc Gouarin, Marc Massot
 </div>
 </div>
 </section>
-<section id="innovation" class="slide level2">
-<h2>Innovation</h2>
+<section id="innovation" class="level2">
+<h2 class="anchored" data-anchor-id="innovation">Innovation</h2>
 <div class="center-page-vertically-2">
 <div class="row">
 <div class="col-7 align-self-center">
 <p>Se situe à l’interconnection entre :</p>
+<div class="nonincremental">
 <ul>
 <li>Contribution aux nouvelles approches mathématiques, émergence</li>
 </ul>
+</div>
+<div class="nonincremental">
 <ul>
 <li>Nouvelles architectures de calcul et techniques d’implémentation</li>
 </ul>
+</div>
 <div class="fragment" data-fragment-index="1">
 <ul>
 <li><strong>Enjeux de l’innovation scientifique et technologique = réseau de collab. avec d’autres disciplines et entreprises</strong></li>
@@ -283,35 +253,35 @@ Loïc Gouarin, Marc Massot
 </div>
 <div class="col">
 <div class="r-stack">
-<p><img data-src="figures/logiciel_two.png"></p>
-<p><img data-src="figures/logiciel.png" class="fragment" data-fragment-index="1"></p>
+<p><img src="figures/logiciel_two.png" class="img-fluid"></p>
+<p><img src="figures/logiciel.png" class="fragment img-fluid" data-fragment-index="1"></p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="propulsion-électrique" class="slide level2">
-<h2>Propulsion électrique</h2>
+<section id="propulsion-électrique" class="level2">
+<h2 class="anchored" data-anchor-id="propulsion-électrique">Propulsion électrique</h2>
 <div class="row">
 <div class="col-9">
-<p><img data-src="figures/plasma.png" style="width:100.0%"></p>
+<p><img src="figures/plasma.png" class="img-fluid" style="width:100.0%"></p>
 </div>
 <div class="col align-self-center r-stack">
-<p><img data-src="figures/prop_schema.png" class="fragment fade-out" data-fragment-index="0"></p>
+<p><img src="figures/prop_schema.png" class="fragment fade-out img-fluid" data-fragment-index="0"></p>
 <div class="fragment current-visible" data-fragment-index="0">
 <div class="row">
 <div class="col">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/satellite.png"></p>
+<figure class="figure">
+<p><img src="figures/satellite.png" class="img-fluid figure-img"></p>
 <figcaption>+500 engins spatiaux équipés propulsion électrique</figcaption>
 </figure>
 </div>
 </div>
 <div class="col">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/rocket.png"></p>
+<figure class="figure">
+<p><img src="figures/rocket.png" class="img-fluid figure-img"></p>
 <figcaption>70% de la masse consacrée à la charge utile</figcaption>
 </figure>
 </div>
@@ -320,8 +290,8 @@ Loïc Gouarin, Marc Massot
 <div class="row">
 <div class="col">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/computer.png" style="width:50.0%"></p>
+<figure class="figure">
+<p><img src="figures/computer.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption>50 ans sur 10 000 processeurs pour <span class="math inline">\(20 µs\)</span> sur <span class="math inline">\(10 cm^3\)</span></figcaption>
 </figure>
 </div>
@@ -331,8 +301,8 @@ Loïc Gouarin, Marc Massot
 </div>
 </div>
 </section>
-<section id="physique-complexe-fortement-multi-échelle" class="slide level2">
-<h2>Physique complexe fortement multi-échelle</h2>
+<section id="physique-complexe-fortement-multi-échelle" class="level2">
+<h2 class="anchored" data-anchor-id="physique-complexe-fortement-multi-échelle">Physique complexe fortement multi-échelle</h2>
 <div class="row">
 <div class="col-8">
 <p><strong>Enjeux</strong></p>
@@ -353,16 +323,16 @@ Loïc Gouarin, Marc Massot
 <div class="col align-self-center r-stack">
 <div class="fragment fade-out" data-fragment-index="0">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/prop_schema.png"></p>
+<figure class="figure">
+<p><img src="figures/prop_schema.png" class="img-fluid figure-img"></p>
 <figcaption>Schéma d’un propulseur à effet Hall <br> J.P. Boeuf (2017) J. Appl. Phys.</figcaption>
 </figure>
 </div>
 </div>
 <div class="fragment fade-out current-visible" data-fragment-index="0">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/electron_plasma.png"></p>
+<figure class="figure">
+<p><img src="figures/electron_plasma.png" class="img-fluid figure-img"></p>
 <figcaption>Courant d’électrons dans une décharge plasmas</figcaption>
 </figure>
 </div>
@@ -390,8 +360,42 @@ Loïc Gouarin, Marc Massot
 </div>
 </div>
 </section>
-<section id="innovation-au-niveau-scientifique" class="slide level2">
-<h2>Innovation au niveau scientifique</h2>
+<section id="méthodes-asymptotic-preserving-a-game-changer" class="level2">
+<h2 class="anchored" data-anchor-id="méthodes-asymptotic-preserving-a-game-changer">Méthodes <em>asymptotic-preserving</em> : a game-changer</h2>
+<div class="row">
+<div class="col-8 align-self-center">
+<p><strong>Méthodes numériques classiques</strong></p>
+<ul>
+<li><p>Erreur de consistance et contrainte de stabilité <span class="math display">\[
+err = \mathcal{O}\left(\frac{\Delta x}{\color{red}\epsilon}\right) \quad \Delta t \leq \color{red}\epsilon \Delta x
+\]</span> <span class="math display">\[
+\color{red}\epsilon = 10^{-4} \quad \Delta x \leq 10^{-6} \quad \Delta x \leq 10^{-10}
+\]</span></p></li>
+<li><p>1 millions de cellules et 10 milliards d’itérations en 1D</p></li>
+</ul>
+<p><br></p>
+<p><strong>Nouvelle gamme de méthodes</strong></p>
+<ul>
+<li>Méthode uniformément asymptotic-preserving (AP) d’ordre élevé</li>
+<li>Analyse détaillée des propriétés des algorithmes obtenus (innovation 2022, PhD L. Reboul)</li>
+<li>Accélération de plusieurs ordres de grandeurs (3 à 4)</li>
+</ul>
+</div>
+<div class="col">
+<div class="text-center color-0">
+<p><strong>Equation hyperbolique de la chaleur</strong></p>
+</div>
+<p><span class="math display">\[
+\begin{align}
+\partial_t E + \frac{1}{\epsilon} \partial_x F &amp;= 0 \\
+\partial_t F + \frac{1}{\epsilon} \partial_x E &amp;  = -\frac{\sigma}{\epsilon^2}F
+\end{align}
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="innovation-au-niveau-scientifique" class="level2">
+<h2 class="anchored" data-anchor-id="innovation-au-niveau-scientifique">Innovation au niveau scientifique</h2>
 <div class="row">
 <div class="col-8 align-self-center">
 <p><strong>Contribution académique, PhD L. Reboul</strong></p>
@@ -410,7 +414,7 @@ Loïc Gouarin, Marc Massot
 </div>
 <div class="col align-self-center">
 <div class="row">
-<video height="400rem" data-autoplay="" loop="" src="videos/ElectronDensity_converted.mp4">
+<video height="300vh" data-autoplay="" loop="" src="videos/ElectronDensity_converted.mp4">
 </video>
 <div class="text-center">
 <p>densité électron</p>
@@ -418,7 +422,7 @@ Loïc Gouarin, Marc Massot
 </div>
 <p><br></p>
 <div class="row">
-<video height="400rem" data-autoplay="" loop="" src="videos/ElectronFlux_converted.mp4">
+<video height="300vh" data-autoplay="" loop="" src="videos/ElectronFlux_converted.mp4">
 </video>
 <div class="text-center">
 <p>flux électron</p>
@@ -427,8 +431,8 @@ Loïc Gouarin, Marc Massot
 </div>
 </div>
 </section>
-<section id="vers-les-applications-scientifiques-et-industrielles" class="slide level2">
-<h2>Vers les applications scientifiques et industrielles</h2>
+<section id="vers-les-applications-scientifiques-et-industrielles" class="level2">
+<h2 class="anchored" data-anchor-id="vers-les-applications-scientifiques-et-industrielles">Vers les applications scientifiques et industrielles</h2>
 <p><strong>Performance de codes et géométries réalistes</strong></p>
 <ul>
 <li>Adaptation dynamique de maillage (AMR/MR) / contrôle d’erreur</li>
@@ -447,8 +451,8 @@ Loïc Gouarin, Marc Massot
 </ul>
 </div>
 </section>
-<section id="samurai" class="slide level2">
-<h2>Samurai</h2>
+<section id="samurai" class="level2">
+<h2 class="anchored" data-anchor-id="samurai">Samurai</h2>
 <div class="row">
 <div class="col-8">
 <p><strong>Outil pour un ensemble d’applications</strong></p>
@@ -473,37 +477,37 @@ Loïc Gouarin, Marc Massot
 <div class="col text-center">
 <div class="row">
 <div class="col align-self-center">
-<p><img data-src="figures/256px-NASA_logo.png"></p>
+<p><img src="figures/256px-NASA_logo.png" class="img-fluid"></p>
 </div>
 <div class="col align-self-center">
-<p><img data-src="figures/esa-6.svg" style="width:80.0%"></p>
+<p><img src="figures/esa-6.svg" class="img-fluid" style="width:80.0%"></p>
 </div>
 </div>
 <div class="row">
 <div class="col align-self-center">
-<p><img data-src="figures/Quantstack_logo.svg"></p>
+<p><img src="figures/Quantstack_logo.svg" class="img-fluid"></p>
 </div>
 <div class="col align-self-center">
-<p><img data-src="figures/totalenergies-1.svg" style="width:60.0%"></p>
+<p><img src="figures/totalenergies-1.svg" class="img-fluid" style="width:60.0%"></p>
 </div>
 </div>
 <div class="row">
 <div class="col align-self-center">
-<p><img data-src="figures/logo_dga.svg" style="width:30.0%"></p>
+<p><img src="figures/logo_dga.svg" class="img-fluid" style="width:30.0%"></p>
 </div>
 <div class="col align-self-center">
-<p><img data-src="figures/vki_logo.webp"></p>
+<p><img src="figures/vki_logo.webp" class="img-fluid"></p>
 </div>
 </div>
 <p><br></p>
-<p><img data-src="figures/dark_logo_samurai.png"></p>
+<p><img src="figures/dark_logo_samurai.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
-<section id="hpcmaths" class="slide level2">
-<h2>HPC@Maths</h2>
+<section id="hpcmaths" class="level2">
+<h2 class="anchored" data-anchor-id="hpcmaths">HPC@Maths</h2>
 <div class="center-page">
-<p><img data-src="figures/actions.svg" style="width:80.0%"></p>
+<p><img src="figures/actions.svg" class="img-fluid" style="width:80.0%"></p>
 <p><br></p>
 <div class="color-0">
 <p><strong>Mise en place depuis 2017 avec l’aide de la Fondation de l’X</strong></p>
@@ -511,8 +515,8 @@ Loïc Gouarin, Marc Massot
 </div>
 </div>
 </section>
-<section id="mésocentre-de-calcul-et-de-données" class="slide level2" data-background-image="figures/serveurs.png" data-background-position="right" data-background-size="40%">
-<h2>Mésocentre de Calcul et de données</h2>
+<section id="mésocentre-de-calcul-et-de-données" class="level2" data-background-image="figures/serveurs.png" data-background-position="right" data-background-size="40%">
+<h2 data-background-image="figures/serveurs.png" data-background-position="right" data-background-size="40%" class="anchored" data-anchor-id="mésocentre-de-calcul-et-de-données">Mésocentre de Calcul et de données</h2>
 <p><strong>Ecole polytechnique - IP Paris</strong></p>
 <div class="center-page-vertically-2">
 <div class="row">
@@ -528,14 +532,14 @@ Loïc Gouarin, Marc Massot
 </div>
 </div>
 </section>
-<section id="section-1" class="slide level2" data-background-image="figures/foret.png" data-background-position="left" data-background-size="40%">
-<h2></h2>
+<section id="section-1" class="level2" data-background-image="figures/foret.png" data-background-position="left" data-background-size="40%">
+<h2 data-background-image="figures/foret.png" data-background-position="left" data-background-size="40%" class="anchored" data-anchor-id="section-1"></h2>
 <div class="row">
 <div class="col">
 
 </div>
 <div class="col-7">
-<h2>
+<h2 class="anchored">
 Création de l’Unité de Service IDCS
 </h2>
 <ul>
@@ -554,18 +558,18 @@ Création de l’Unité de Service IDCS
 </div>
 </div>
 </section>
-<section id="enseignement" class="slide level2">
-<h2>Enseignement</h2>
+<section id="enseignement" class="level2">
+<h2 class="anchored" data-anchor-id="enseignement">Enseignement</h2>
 <div class="center-page">
-<p><img data-src="figures/parcours.svg" style="width:90.0%"></p>
+<p><img src="figures/parcours.svg" class="img-fluid" style="width:90.0%"></p>
 <p><br></p>
 <div class="color-0">
 <p><strong>Formation mise en place - interaction avec PME &amp; Développement Pédagogie</strong></p>
 </div>
 </div>
 </section>
-<section id="conclusion" class="slide level2">
-<h2>Conclusion</h2>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <div class="row">
 <div class="col-7 align-self-center">
 <p><strong>Positionnement pertinent au coeur de l’innovation</strong></p>
@@ -579,15 +583,15 @@ Création de l’Unité de Service IDCS
 <p><strong>Projet en forte progression</strong></p>
 </div>
 <div class="col">
-<p><img data-src="figures/logiciel.png" style="width:80.0%"></p>
+<p><img src="figures/logiciel.png" class="img-fluid" style="width:80.0%"></p>
 </div>
 </div>
 <div class="text-center color-0 align-self-end mt-5">
 <p><strong>Besoin de renforcer l’écosystème en particulier l’équipe d’Ingénieurs de Recherche experts en Calcul</strong></p>
 </div>
 </section>
-<section id="remerciements" class="slide level2">
-<h2>Remerciements</h2>
+<section id="remerciements" class="level2">
+<h2 class="anchored" data-anchor-id="remerciements">Remerciements</h2>
 <p><strong>Etudiants, ingénieurs et collaborateurs</strong></p>
 <ul>
 <li>Doctorants et post-doctorants</li>
@@ -608,400 +612,421 @@ Création de l’Unité de Service IDCS
 <li>Grand donateur pour son écoute, son soutien et ses conseils</li>
 </ul>
 </section>
-<section id="section-2" class="slide level2">
-<h2></h2>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2"></h2>
 <div class="center-page">
-<h4>
+<h4 class="anchored">
 Merci pour votre attention
 </h4>
 <p><br> <a href="https://initiative-hpc-maths.gitlab.labos.polytechnique.fr/site/">HPC@Maths</a></p>
 </div>
-
 </section>
-    </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="figures/logo_blanc.svg" class="slide-logo"></p>
-<div class="footer footer-default">
-<p>Anniversaire de promotions 2025 <img width="5%" src="figures/by-sa.png"> 27 septembre 2025</p>
-</div>
-</div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="talk_files/libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="talk_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="talk_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="talk_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="talk_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="talk_files/libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="talk_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="talk_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="talk_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="talk_files/libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
-
-      // Full list of configuration options available at:
-      // https://revealjs.com/config/
-      Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': false,
-'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
-'autoAnimateUnmatched': true,
-'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
- 
-        // Display controls in the bottom right corner
-        controls: false,
-
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: false,
-
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
-
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-
-        // Display a presentation progress bar
-        progress: true,
-
-        // Display the page number of the current slide
-        slideNumber: false,
-
-        // 'all', 'print', or 'speaker'
-        showSlideNumber: 'all',
-
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-
-        // Start with 1 for the hash rather than 0
-        hashOneBasedIndex: false,
-
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-
-        // Push each slide change to the browser history
-        history: true,
-
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-
-        // Enable the slide overview mode
-        overview: true,
-
-        // Disables the default reveal.js slide layout (scaling and centering)
-        // so that you can use custom CSS layout
-        disableLayout: false,
-
-        // Vertical centering of slides
-        center: false,
-
-        // Enables touch navigation on devices with touch input
-        touch: true,
-
-        // Loop the presentation
-        loop: false,
-
-        // Change the presentation direction to be RTL
-        rtl: false,
-
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'linear',
-
-        // Randomizes the order of slides each time the presentation loads
-        shuffle: false,
-
-        // Turns fragments on and off globally
-        fragments: true,
-
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: false,
-
-        // Flags if the presentation is running in an embedded mode,
-        // i.e. contained within a limited portion of the screen
-        embedded: false,
-
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-
-        // Flags if speaker notes should be visible to all viewers
-        showNotes: false,
-
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Enable slide navigation via mouse wheel
-        mouseWheel: false,
-
-        // The display mode that will be used to show slides
-        display: 'block',
-
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        // Opens links in an iframe preview overlay
-        previewLinks: false,
-
-        // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
-
-        // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
-
-        // Transition style for full page slide backgrounds
-        // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
-
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-        width: '100%',
-
-        height: '100%',
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.1,
-
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
-        // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
-
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
-        ]
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
-    </script>
-    <script id="quarto-html-after-body" type="application/javascript">
-      window.document.addEventListener("DOMContentLoaded", function (event) {
-        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-        tabsets.forEach(function(tabset) {
-          const tabby = new Tabby('#' + tabset.id);
-        });
-        const isCodeAnnotation = (el) => {
-          for (const clz of el.classList) {
-            if (clz.startsWith('code-annotation-')) {                     
-              return true;
-            }
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-          return false;
         }
-        const onCopySuccess = function(e) {
-          // button target
-          const button = e.trigger;
-          // don't keep focus
-          button.blur();
-          // flash "checked"
-          button.classList.add('code-copy-button-checked');
-          var currentTitle = button.getAttribute("title");
-          button.setAttribute("title", "Copié");
-          let tooltip;
-          if (window.bootstrap) {
-            button.setAttribute("data-bs-toggle", "tooltip");
-            button.setAttribute("data-bs-placement", "left");
-            button.setAttribute("data-bs-title", "Copié");
-            tooltip = new bootstrap.Tooltip(button, 
-              { trigger: "manual", 
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8]});
-            tooltip.show();    
-          }
-          setTimeout(function() {
-            if (tooltip) {
-              tooltip.hide();
-              button.removeAttribute("data-bs-title");
-              button.removeAttribute("data-bs-toggle");
-              button.removeAttribute("data-bs-placement");
-            }
-            button.setAttribute("title", currentTitle);
-            button.classList.remove('code-copy-button-checked');
-          }, 1000);
-          // clear code selection
-          e.clearSelection();
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
-          return codeEl.innerText;
         }
-        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-          text: getTextToCopy
-        });
-        clipboard.on('success', onCopySuccess);
-        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-            text: getTextToCopy,
-            container: window.document.getElementById('quarto-embedded-source-code-modal')
-          });
-          clipboardModal.on('success', onCopySuccess);
-        }
-          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
-          var isInternal = (href) => {
-              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-          }
-          // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-          for (var i=0; i<links.length; i++) {
-            const link = links[i];
-            if (!isInternal(link.href)) {
-              // undo the damage that might have been done by quarto-nav.js in the case of
-              // links that we want to consider external
-              if (link.dataset.originalHref !== undefined) {
-                link.href = link.dataset.originalHref;
-              }
-            }
-          }
-        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-          const config = {
-            allowHTML: true,
-            maxWidth: 500,
-            delay: 100,
-            arrow: false,
-            appendTo: function(el) {
-                return el.closest('section.slide') || el.parentElement;
-            },
-            interactive: true,
-            interactiveBorder: 10,
-            theme: 'light-border',
-            placement: 'bottom-start',
-          };
-          if (contentFn) {
-            config.content = contentFn;
-          }
-          if (onTriggerFn) {
-            config.onTrigger = onTriggerFn;
-          }
-          if (onUntriggerFn) {
-            config.onUntrigger = onUntriggerFn;
-          }
-            config['offset'] = [0,0];
-            config['maxWidth'] = 700;
-          window.tippy(el, config); 
-        }
-        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-        for (var i=0; i<noterefs.length; i++) {
-          const ref = noterefs[i];
-          tippyHover(ref, function() {
-            // use id or data attribute instead here
-            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-            try { href = new URL(href).hash; } catch {}
-            const id = href.replace(/^#\/?/, "");
-            const note = window.document.getElementById(id);
-            if (note) {
-              return note.innerHTML;
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
             } else {
-              return "";
+              container.appendChild(child.cloneNode(true));
+              break;
             }
-          });
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        const findCites = (el) => {
-          const parentEl = el.parentElement;
-          if (parentEl) {
-            const cites = parentEl.dataset.cites;
-            if (cites) {
-              return {
-                el,
-                cites: cites.split(' ')
-              };
-            } else {
-              return findCites(el.parentElement)
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
             }
           } else {
-            return undefined;
-          }
-        };
-        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-        for (var i=0; i<bibliorefs.length; i++) {
-          const ref = bibliorefs[i];
-          const citeInfo = findCites(ref);
-          if (citeInfo) {
-            tippyHover(citeInfo.el, function() {
-              var popup = window.document.createElement('div');
-              citeInfo.cites.forEach(function(cite) {
-                var citeDiv = window.document.createElement('div');
-                citeDiv.classList.add('hanging-indent');
-                citeDiv.classList.add('csl-entry');
-                var biblioDiv = window.document.getElementById('ref-' + cite);
-                if (biblioDiv) {
-                  citeDiv.innerHTML = biblioDiv.innerHTML;
-                }
-                popup.appendChild(citeDiv);
-              });
-              return popup.innerHTML;
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
             });
           }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
         }
+      }, function(instance) {
       });
-      </script>
-    
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
 
 </body></html>
