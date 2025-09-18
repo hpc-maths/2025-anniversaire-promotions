@@ -1,0 +1,170 @@
+---
+title: "HPC@Maths : Un modèle inédit pour accélérer la recherche et ses applications"
+author:
+  name: Loïc Gouarin, Marc Massot
+date: 27 septembre 2025
+date-format: long
+lang: fr
+format:
+  revealjs:
+    css: css/light.css
+    # css: css/neo-brutalism.css
+
+    logo: figures/logo_blanc.svg
+    # slide-number: true
+resources:
+  - videos/**
+highlight-style: github
+footer: Anniversaire de promotions 2025 <img width="5%" src="figures/by-sa.png"/> 27 septembre 2025
+---
+
+```{=html}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+```
+
+::::{.center-page}
+:::{.row}
+::::{.col-8}
+![](figures/hpc-explain.svg)
+::::
+::::{.col .align-self-center .border .fragment}
+
+**Plan**
+
+- Évolution des architectures, des mathématiques et des algorithmes
+- Innovation scientifique et technologique : illustrations
+- L’Initiative HPC@Maths et son impact à l’X
+
+::::
+
+:::
+::::
+---
+
+:::{.center-page}
+![](figures/timeline.png)
+:::
+
+---
+
+:::{.r-stack}
+![](figures/courbes_1.png){.fragment .fade-out data-fragment-index=0}
+
+![](figures/courbes_2.png){.fragment .current-visible data-fragment-index=0}
+
+![](figures/courbes_3.png){.fragment .current-visible}
+
+![](figures/courbes_4.png){.fragment}
+:::
+
+---
+
+::::{.center-page-vertically-2}
+:::{.row}
+::::{.col-7 .align-self-center .text-center}
+![](figures/achitecture.svg)
+::::
+::::{.col .align-self-center}
+
+**Une complexité à tous les étages**
+
+- SIMD
+- NUMA-aware
+- Carte accélératrice (GPU, FPGA, …)
+- Noeuds de calcul interconnectés
+
+:::{.text-center .fw-bold}
+Mémoire non unifiée
+:::
+
+<br>
+**Une grande variété d’outils**
+
+- OpenMP
+- Cuda
+- MPI
+- OpenAcc
+- ...
+
+::::
+:::
+::::
+
+---
+
+::::{.row .h-100}
+
+:::{.col .h-100}
+![](figures/couloir.jpg)
+:::
+
+:::{.col .align-self-center}
+Il est maintenant indispensable de connaître l’ensemble des composants et leurs interactions pour tirer partie des ressources mises à disposition.
+L’expertise demandée est devenue complexe et les choix nombreux.
+:::
+::::
+
+## Evolution des méthodes mathématiques
+
+:::{.row}
+::::{.col}
+**Progression parallèle à la loi de Moore**
+
+- Un exemple : résolution de système linéaires creux
+- Illustration issue d’une réflexion de la société SIAM en 2001 sur le domaine émergeant “Computational Science and Engineering”
+- Valable jusque vers 2005 puis saturation progressive sur les sujets “classiques” de la discipline
+
+:::{.fragment fragment-index=0}
+**Emergence de nouvelles approches**
+
+- Depuis 2010 changements de paradigmes et solutions innovantes en analyse numérique → ruptures
+- HPC : simuler des problèmes de tailles importante sur des architectures classiques (génie biomédical)
+- Exemple : adaptation en temps et en espace (sép. d’opérateur pour intégrer la dynamique en temps) et contrôle d’erreur
+:::
+
+::::
+::::{.col .r-stack}
+:::{.fragment fragment-index=0 .fade-out}
+![Source SIAM Review 2001](figures/comp_algo_hard.jpg)
+:::
+:::{.fragment fragment-index=0 .current-visible}
+![PhD Max Duarte (2011)](figures/acc_rej_steps_ign_eps3.jpg){width=80%}
+
+<video data-autoplay loop src="videos/ignition_Re1000.mov" />
+:::
+::::
+:::
+:::{.fragment fragment-index=0}
+**Passage à un nouveau chapitre de l’analyse numérique depuis 2010 **
+:::
+
+## Innovation
+
+:::::{.center-page-vertically-2}
+:::{.row}
+::::{.col-7 .fs-3 .align-self-center}
+Se situe à l’interconnection entre :
+
+::: {.nonincremental}
+- Contribution aux nouvelles approches mathématiques, émergence
+:::
+::: {.nonincremental}
+- Nouvelles architectures de calcul et techniques d’implémentation
+:::
+::: {.fragment fragment-index=1}
+- **Enjeux de l’innovation scientifique et technologique = réseau de collab. avec d’autres disciplines et entreprises**
+:::
+::::
+::::{.col}
+:::{.r-stack}
+![](figures/logiciel_two.png)
+
+![](figures/logiciel.png){.fragment fragment-index=1}
+:::
+::::
+:::
+:::::
+
+## Propulsion électrique
+
