@@ -14,6 +14,7 @@ format:
     # slide-number: true
 resources:
   - videos/**
+  - css/fonts/**
 highlight-style: github
 footer: Anniversaire de promotions 2025 <img width="5%" src="figures/by-sa.png"/> 27 septembre 2025
 ---
