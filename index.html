@@ -144,13 +144,15 @@ Loïc Gouarin, Marc Massot
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<div class="center-page">
+<div class="center-page-vertically-2">
 <div class="row">
-<div class="col-8">
-<p><img data-src="figures/hpc-explain.svg"></p>
+<div class="col-8 text-center">
+<p><img data-src="figures/hpc-explain.svg" style="width:60.0%"></p>
 </div>
-<div class="col align-self-center border fragment">
+<div class="col align-self-center border fragment border-2">
+<div class="color-0">
 <p><strong>Plan</strong></p>
+</div>
 <ul>
 <li>Évolution des architectures, des mathématiques et des algorithmes</li>
 <li>Innovation scientifique et technologique : illustrations</li>
@@ -168,7 +170,7 @@ Loïc Gouarin, Marc Massot
 </section>
 <section class="slide level2">
 
-<div class="r-stack">
+<div class="center-page r-stack">
 <p><img data-src="figures/courbes_1.png" class="fragment fade-out" data-fragment-index="0"></p>
 <p><img data-src="figures/courbes_2.png" class="fragment current-visible" data-fragment-index="0"></p>
 <p><img data-src="figures/courbes_3.png" class="fragment current-visible"></p>
@@ -180,7 +182,7 @@ Loïc Gouarin, Marc Massot
 <div class="center-page-vertically-2">
 <div class="row">
 <div class="col-7 align-self-center text-center">
-<p><img data-src="figures/achitecture.svg"></p>
+<p><img data-src="figures/achitecture.svg" style="width:80.0%"></p>
 </div>
 <div class="col align-self-center">
 <p><strong>Une complexité à tous les étages</strong></p>
@@ -190,8 +192,8 @@ Loïc Gouarin, Marc Massot
 <li>Carte accélératrice (GPU, FPGA, …)</li>
 <li>Noeuds de calcul interconnectés</li>
 </ul>
-<div class="text-center fw-bold">
-<p>Mémoire non unifiée</p>
+<div class="text-center color-0">
+<p><strong>Mémoire non unifiée</strong></p>
 </div>
 <p><br> <strong>Une grande variété d’outils</strong></p>
 <ul>
@@ -205,14 +207,15 @@ Loïc Gouarin, Marc Massot
 </div>
 </div>
 </section>
-<section class="slide level2">
+<section id="section" class="slide level2 center" data-background-image="figures/couloir.jpg" data-background-position="left" data-background-size="50%">
+<h2></h2>
+<div class="row">
+<div class="col-6">
 
-<div class="row h-100">
-<div class="col h-100">
-<p><img data-src="figures/couloir.jpg"></p>
 </div>
-<div class="col align-self-center">
-<p>Il est maintenant indispensable de connaître l’ensemble des composants et leurs interactions pour tirer partie des ressources mises à disposition. L’expertise demandée est devenue complexe et les choix nombreux.</p>
+<div class="col-6 p-5">
+<p>Il est maintenant indispensable de connaître l’ensemble des composants et leurs interactions pour tirer partie des ressources mises à disposition.</p>
+<p>L’expertise demandée est devenue complexe et les choix nombreux.</p>
 </div>
 </div>
 </section>
@@ -234,8 +237,12 @@ Loïc Gouarin, Marc Massot
 <li>Exemple : adaptation en temps et en espace (sép. d’opérateur pour intégrer la dynamique en temps) et contrôle d’erreur</li>
 </ul>
 </div>
+<p><br></p>
+<div class="fragment text-center color-0" data-fragment-index="0">
+<p><strong>Passage à un nouveau chapitre de l’analyse numérique depuis 2010 </strong></p>
 </div>
-<div class="col r-stack">
+</div>
+<div class="col-5 r-stack">
 <div class="fragment fade-out" data-fragment-index="0">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -255,15 +262,12 @@ Loïc Gouarin, Marc Massot
 </video></div>
 </div>
 </div>
-<div class="fragment" data-fragment-index="0">
-<p><strong>Passage à un nouveau chapitre de l’analyse numérique depuis 2010 </strong></p>
-</div>
 </section>
 <section id="innovation" class="slide level2">
 <h2>Innovation</h2>
 <div class="center-page-vertically-2">
 <div class="row">
-<div class="col-7 fs-3 align-self-center">
+<div class="col-7 align-self-center">
 <p>Se situe à l’interconnection entre :</p>
 <ul>
 <li>Contribution aux nouvelles approches mathématiques, émergence</li>
@@ -288,6 +292,330 @@ Loïc Gouarin, Marc Massot
 </section>
 <section id="propulsion-électrique" class="slide level2">
 <h2>Propulsion électrique</h2>
+<div class="row">
+<div class="col-9">
+<p><img data-src="figures/plasma.png" style="width:100.0%"></p>
+</div>
+<div class="col align-self-center r-stack">
+<p><img data-src="figures/prop_schema.png" class="fragment fade-out" data-fragment-index="0"></p>
+<div class="fragment current-visible" data-fragment-index="0">
+<div class="row">
+<div class="col">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/satellite.png"></p>
+<figcaption>+500 engins spatiaux équipés propulsion électrique</figcaption>
+</figure>
+</div>
+</div>
+<div class="col">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/rocket.png"></p>
+<figcaption>70% de la masse consacrée à la charge utile</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/computer.png" style="width:50.0%"></p>
+<figcaption>50 ans sur 10 000 processeurs pour <span class="math inline">\(20 µs\)</span> sur <span class="math inline">\(10 cm^3\)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="physique-complexe-fortement-multi-échelle" class="slide level2">
+<h2>Physique complexe fortement multi-échelle</h2>
+<div class="row">
+<div class="col-8">
+<p><strong>Enjeux</strong></p>
+<ul>
+<li>Couche limite aux parois (gaine) détermine la corrosion et ainsi la durée de vie des propulseurs - Phénomène d’instabilités doivent être reproduits</li>
+<li>Modélisation d’une physique incluant un large spectre espace/temps (10cm/100𝜇m, 10𝜇s/0.1ns). - Simulation abordable et prédictive</li>
+</ul>
+<div class="text-center color-0">
+<p><strong>Modèles pertinents et outils numériques fiables et efficaces</strong></p>
+</div>
+<p><br></p>
+<p><strong>Défis</strong></p>
+<ul>
+<li>Extraire une hiérarchie de modèles mathématiques simples isolant chaque difficulté (non-linéarité, régimes asymptotiques)</li>
+<li>Présence d’échelles multiples (interactions électrostatiques, faible masse des électrons) introduit de la “raideur” numérique</li>
+</ul>
+</div>
+<div class="col align-self-center r-stack">
+<div class="fragment fade-out" data-fragment-index="0">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/prop_schema.png"></p>
+<figcaption>Schéma d’un propulseur à effet Hall <br> J.P. Boeuf (2017) J. Appl. Phys.</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment fade-out current-visible" data-fragment-index="0">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/electron_plasma.png"></p>
+<figcaption>Courant d’électrons dans une décharge plasmas</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{cases}
+\lambda^2_D = \displaystyle\frac{\epsilon_0 k_b T_e}{n_e q_e^2} \\\\
+\omega^{-1}_{pe} = \displaystyle\sqrt\frac{m_e \epsilon_0}{n_e q_e^2}
+\end{cases}
+\]</span></p>
+<div class="text-center color">
+<p><strong>Limites asymptotiques</strong></p>
+<p><strong>dans certaines zones</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="r-stack">
+<div class="mt-5 color-0 text-center fade-out fragment" data-fragment-index="0">
+<p><strong>Des phénomènes microscopiques génèrent des effets macroscopique, instabilités ou couches limites, et doivent être pris en compte et résolus de manière précise dans les simulations</strong></p>
+</div>
+<div class="mt-5 color-0 text-center fragment" data-fragment-index="0">
+<p><strong>Approche cinétique au niveau mésoscopique et méthode PIC trop coûteuses <br> → hiérarchie de modèles fluides - méthode numérique clef</strong></p>
+</div>
+</div>
+</section>
+<section id="innovation-au-niveau-scientifique" class="slide level2">
+<h2>Innovation au niveau scientifique</h2>
+<div class="row">
+<div class="col-8 align-self-center">
+<p><strong>Contribution académique, PhD L. Reboul</strong></p>
+<ul>
+<li>Première simulation d’instabilité dans les plasmas froids à basse pression partiellement magnétisés avec un modèle fluide grâce à la précision et aux propriétés du schéma</li>
+<li>Comparaison avec méthodes PIC (première académique)</li>
+<li>Capture les instabilités précisément et de manière fiable</li>
+</ul>
+<div class="text-center color-0">
+<p><strong>Nouvelles méthodes asymptotic-perserving = Rupture</strong></p>
+<p><strong>Précision augmentée et accélération d’un facteur 100 par rapport aux techniques classiques</strong></p>
+</div>
+<ul>
+<li>Capacité de faire de l’adaptation de maillage (propriétés AP du schéma) pour accélérer le calcul et diminuer la trace mémoire en multi-D. Développement dans le code de calcul communautaire Open Source SAMURAI</li>
+</ul>
+</div>
+<div class="col align-self-center">
+<div class="row">
+<video height="400rem" data-autoplay="" loop="" src="videos/ElectronDensity_converted.mp4">
+</video>
+<div class="text-center">
+<p>densité électron</p>
+</div>
+</div>
+<p><br></p>
+<div class="row">
+<video height="400rem" data-autoplay="" loop="" src="videos/ElectronFlux_converted.mp4">
+</video>
+<div class="text-center">
+<p>flux électron</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="vers-les-applications-scientifiques-et-industrielles" class="slide level2">
+<h2>Vers les applications scientifiques et industrielles</h2>
+<p><strong>Performance de codes et géométries réalistes</strong></p>
+<ul>
+<li>Adaptation dynamique de maillage (AMR/MR) / contrôle d’erreur</li>
+<li>Parallélisme massif</li>
+<li>Codes communautaires (collaboration)
+<ul>
+<li>CanoP (Adaptive Mesh Refinement, AMR)</li>
+<li>SAMURAI (Multi-résolution, algèbre d’intervalle)</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<p><strong>Transfert vers les autres disciplines et les industriels</strong></p>
+<ul>
+<li>Académiques (physique des plasmas, physique solaire)</li>
+<li>Industriels et instituts de recherche</li>
+</ul>
+</div>
+</section>
+<section id="samurai" class="slide level2">
+<h2>Samurai</h2>
+<div class="row">
+<div class="col-8">
+<p><strong>Outil pour un ensemble d’applications</strong></p>
+<ul>
+<li>Physique des plasmas (propulsion électrique, prédiction du temps solaire, electron transpiration cooling…)</li>
+<li>Ecoulements diphasiques (propulsion liquide, propulsion aéronautique, moteurs à injection directe, chasse au lancement d’un missile)</li>
+<li>Simulation numérique directe des piles au lithium</li>
+</ul>
+<p><br></p>
+<p><strong>Innovation</strong></p>
+<ul>
+<li>Nouvelle structure de données basée sur une algèbre d’ensembles</li>
+<li>Facilité d’implémentation de nouveaux schéma (indépendant de la gestion dynamique du maillage) permettant de créer un écosystème pour les applications</li>
+<li>Mise en place de nouvelles approches (ordonnancement de tâches) pour le parallélisme</li>
+</ul>
+<div class="text-center color-0">
+<p><strong>Code communautaire Open Source</strong></p>
+<p><a href="https://github.com/hpc-maths/samurai">https://github.com/hpc-maths/samurai</a></p>
+<p><strong>Même code pour les deux applications présentées</strong></p>
+</div>
+</div>
+<div class="col text-center">
+<div class="row">
+<div class="col align-self-center">
+<p><img data-src="figures/256px-NASA_logo.png"></p>
+</div>
+<div class="col align-self-center">
+<p><img data-src="figures/esa-6.svg" style="width:80.0%"></p>
+</div>
+</div>
+<div class="row">
+<div class="col align-self-center">
+<p><img data-src="figures/Quantstack_logo.svg"></p>
+</div>
+<div class="col align-self-center">
+<p><img data-src="figures/totalenergies-1.svg" style="width:60.0%"></p>
+</div>
+</div>
+<div class="row">
+<div class="col align-self-center">
+<p><img data-src="figures/logo_dga.svg" style="width:30.0%"></p>
+</div>
+<div class="col align-self-center">
+<p><img data-src="figures/vki_logo.webp"></p>
+</div>
+</div>
+<p><br></p>
+<p><img data-src="figures/dark_logo_samurai.png"></p>
+</div>
+</div>
+</section>
+<section id="hpcmaths" class="slide level2">
+<h2>HPC@Maths</h2>
+<div class="center-page">
+<p><img data-src="figures/actions.svg" style="width:80.0%"></p>
+<p><br></p>
+<div class="color-0">
+<p><strong>Mise en place depuis 2017 avec l’aide de la Fondation de l’X</strong></p>
+<p><strong>Impact important sur l’écosystème enseignement-recherche à l’X</strong></p>
+</div>
+</div>
+</section>
+<section id="mésocentre-de-calcul-et-de-données" class="slide level2" data-background-image="figures/serveurs.png" data-background-position="right" data-background-size="40%">
+<h2>Mésocentre de Calcul et de données</h2>
+<p><strong>Ecole polytechnique - IP Paris</strong></p>
+<div class="center-page-vertically-2">
+<div class="row">
+<div class="col-6 align-self-center">
+<ul>
+<li>Opérationnel depuis été 2021</li>
+<li>2000 coeurs de calcul pour communauté de laboratoires initiateurs</li>
+<li>Montée en puissance à 3000 coeurs et nouveaux partenaires</li>
+<li>Communauté autour des méthodes numériques de nouvelle génération et leur implémentation</li>
+<li>“Computational Science” - Collaboration interdisciplinaire</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2" data-background-image="figures/foret.png" data-background-position="left" data-background-size="40%">
+<h2></h2>
+<div class="row">
+<div class="col">
+
+</div>
+<div class="col-7">
+<h2>
+Création de l’Unité de Service IDCS
+</h2>
+<ul>
+<li>Créée en mai 2020 à l’École polytechnique</li>
+<li>Inspirée de ce qui se fait dans les grandes universités (Stanford, EPFL)</li>
+<li>Ensemble d’ingénieurs ASR et CALCUL en soutien aux grands projets d’infrastructure informatique de l’École et IP Paris</li>
+<li>Réactivité sur évolution des infrastructures et Data Center - Soutien à la communauté</li>
+<li>Vocation à devenir une Unité d’Appui à la Recherche (CNRS)</li>
+</ul>
+<div class="text-center mt-5 color-0">
+<p><strong>Effort important mené avec succès sur ces réalisations</strong></p>
+<p><strong>avec un fort soutien de l’École polytechnique / IPP</strong></p>
+<p><br></p>
+<p><strong>Initiative HPC@Maths a eu un rôle clef</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section id="enseignement" class="slide level2">
+<h2>Enseignement</h2>
+<div class="center-page">
+<p><img data-src="figures/parcours.svg" style="width:90.0%"></p>
+<p><br></p>
+<div class="color-0">
+<p><strong>Formation mise en place - interaction avec PME &amp; Développement Pédagogie</strong></p>
+</div>
+</div>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<div class="row">
+<div class="col-7 align-self-center">
+<p><strong>Positionnement pertinent au coeur de l’innovation</strong></p>
+<ul>
+<li>Expertise Mathématique (CMAP)</li>
+<li>Expertise Informatique (Groupe d’ingénieurs de recherche experts en calcul - développeurs)</li>
+<li>Réseau de collaborations sur les divers axes scientifiques et entreprises</li>
+<li>Production de logiciels open-source</li>
+</ul>
+<p><strong>Création d’un écosystème - École et IP Paris</strong></p>
+<p><strong>Projet en forte progression</strong></p>
+</div>
+<div class="col">
+<p><img data-src="figures/logiciel.png" style="width:80.0%"></p>
+</div>
+</div>
+<div class="text-center color-0 align-self-end mt-5">
+<p><strong>Besoin de renforcer l’écosystème en particulier l’équipe d’Ingénieurs de Recherche experts en Calcul</strong></p>
+</div>
+</section>
+<section id="remerciements" class="slide level2">
+<h2>Remerciements</h2>
+<p><strong>Etudiants, ingénieurs et collaborateurs</strong></p>
+<ul>
+<li>Doctorants et post-doctorants</li>
+<li>Ingénieurs Calcul, Valorisation et Project Manager</li>
+<li>Collaborateurs au sein du CMAP et ailleurs</li>
+<li>Collaborateurs industriels, PME, startup</li>
+</ul>
+<p><strong>Ecole polytechnique - IP Paris</strong></p>
+<ul>
+<li>Gestion Laboratoire CMAP</li>
+<li>Unité IDCS</li>
+<li>Pôle teaching and learning center</li>
+</ul>
+<p><strong>Fondation de l’X</strong></p>
+<ul>
+<li>Direction de campagne</li>
+<li>Toute l’équipe de la Fondation</li>
+<li>Grand donateur pour son écoute, son soutien et ses conseils</li>
+</ul>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="center-page">
+<h4>
+Merci pour votre attention
+</h4>
+<p><br> <a href="https://initiative-hpc-maths.gitlab.labos.polytechnique.fr/site/">HPC@Maths</a></p>
+</div>
 
 </section>
     </div>
@@ -472,9 +800,9 @@ Loïc Gouarin, Marc Massot
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: '100%',
 
-        height: 700,
+        height: '100%',
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
