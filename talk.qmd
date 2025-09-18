@@ -47,7 +47,7 @@ footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/
 ::::{.col-8 .text-center }
 ![](figures/hpc-explain.svg){width="60%"}
 ::::
-::::{.col .align-self-center .border .fragment .border-2}
+::::{.col-4 .align-self-center .border .fragment .border-2}
 
 :::{.color-0}
 **Plan**
@@ -200,17 +200,15 @@ Se situe à l’interconnection entre :
 ![](figures/prop_schema.png){.fragment .fade-out data-fragment-index=0}
 
 :::::{.fragment .current-visible data-fragment-index=0}
-:::{.row}
-::::{.col}
+:::{.row .justify-content-center}
+::::{.col-6}
 ![+500 engins spatiaux équipés propulsion électrique](figures/satellite.png)
 ::::
-::::{.col}
+::::{.col-6}
 ![70% de la masse consacrée à la charge utile](figures/rocket.png)
 ::::
-:::
-:::{.row}
-::::{.col}
-![50 ans sur 10 000 processeurs pour $20 µs$ sur $10 cm^3$](figures/computer.png){width="50%"}
+::::{.col-6}
+![50 ans sur 10 000 processeurs pour $20 µs$ sur $10 cm^3$](figures/computer.png)
 ::::
 :::
 :::::
