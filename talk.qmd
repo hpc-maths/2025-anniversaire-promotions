@@ -17,8 +17,8 @@ format:
     width: "100%"
     height: "100%"
     margin: 0.1
-    # min-scale: 0.2
-    # max-scale: 2.0
+    min-scale: 0.2
+    max-scale: 2.0
     # center: true
 
     html-math-method:
