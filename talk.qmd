@@ -336,7 +336,7 @@ par rapport aux techniques classiques**
 ::::{.col .align-self-center}
 
 :::{.row}
-<video height="300vh" data-autoplay loop src="videos/ElectronDensity_converted.mp4"></video>
+<video height="300vw" data-autoplay loop src="videos/ElectronDensity_converted.mp4"></video>
 
 ::::{.text-center}
 densité électron
@@ -346,7 +346,7 @@ densité électron
 <br>
 
 :::{.row}
-<video height="300vh" data-autoplay loop src="videos/ElectronFlux_converted.mp4"></video>
+<video height="300vw" data-autoplay loop src="videos/ElectronFlux_converted.mp4"></video>
 ::::{.text-center}
 flux électron
 ::::

@@ -31,7 +31,7 @@ section.has-dark-background h6 {
     --r-main-font: "Raleway", sans-serif;
     --r-line-color: #6fa8dc;
     --r-other-color: #e2a854;
-    --r-main-font-size: 3vh;
+    --r-main-font-size: 1.5vw;
     --r-main-font-weight: extra-light;
     --r-main-color: #ffffff;
     --r-block-margin: 2px;
@@ -44,10 +44,10 @@ section.has-dark-background h6 {
     --r-heading-text-shadow: none;
     --r-heading-font-weight: 600;
     --r-heading1-text-shadow: none;
-    --r-heading1-size: 5vh;
-    --r-heading2-size: 4.5vh;
-    --r-heading3-size: 1.5vh;
-    --r-heading4-size: 5vh;
+    --r-heading1-size: 4vw;
+    --r-heading2-size: 3.5vw;
+    --r-heading3-size: 1.5vw;
+    --r-heading4-size: 4vw;
     --r-code-font: monospace;
     /* --r-link-color: #e2a854; */
     --r-link-color: white;
@@ -155,7 +155,7 @@ figcaption{
 
 .quarto-title-authors{
     display: block !important;
-    font-size: 4vh !important;
+    font-size: 2.5vw !important;
     font-family: "Raleway", sans-serif;
     text-align: left !important;
     color: var(--r-other-color);
@@ -169,7 +169,7 @@ figcaption{
 }
 
 .date{
-    font-size: 2vh !important;
+    font-size: 1.5vw !important;
     font-family: "Raleway", sans-serif;
     text-align: left !important;
     text-transform: none;
@@ -177,7 +177,7 @@ figcaption{
 }
 
 h1.title {
-    font-size: 4vh !important;
+    font-size: 2.5vw !important;
     text-align: left;
     color: white;
     text-transform: none;
