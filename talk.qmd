@@ -20,10 +20,10 @@ format:
     # min-scale: 0.2
     # max-scale: 2.0
     # center: true
-  # html:
-  #   html-math-method:
-  #       method: mathjax
-  #       url: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
+  html:
+    html-math-method:
+        method: mathjax
+        url: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js
 resources:
   - videos/**
   - css/fonts/**
