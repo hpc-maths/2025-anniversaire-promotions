@@ -31,7 +31,7 @@ section.has-dark-background h6 {
     --r-main-font: "Raleway", sans-serif;
     --r-line-color: #6fa8dc;
     --r-other-color: #e2a854;
-    --r-main-font-size: 2.4rem;
+    --r-main-font-size: 3vh;
     --r-main-font-weight: extra-light;
     --r-main-color: #ffffff;
     --r-block-margin: 2px;
@@ -44,12 +44,13 @@ section.has-dark-background h6 {
     --r-heading-text-shadow: none;
     --r-heading-font-weight: 600;
     --r-heading1-text-shadow: none;
-    --r-heading1-size: 3rem;
-    --r-heading2-size: 4.5rem;
-    --r-heading3-size: 1.5rem;
-    --r-heading4-size: 5rem;
+    --r-heading1-size: 5vh;
+    --r-heading2-size: 4.5vh;
+    --r-heading3-size: 1.5vh;
+    --r-heading4-size: 5vh;
     --r-code-font: monospace;
-    --r-link-color: #e2a854;
+    /* --r-link-color: #e2a854; */
+    --r-link-color: white;
     --r-link-color-dark: #6fa8dc;
     --r-link-color-hover: white;
     --r-selection-background-color: #98bdef;
@@ -154,7 +155,7 @@ figcaption{
 
 .quarto-title-authors{
     display: block !important;
-    font-size: 4rem !important;
+    font-size: 4vh !important;
     font-family: "Raleway", sans-serif;
     text-align: left !important;
     color: var(--r-other-color);
@@ -168,7 +169,7 @@ figcaption{
 }
 
 .date{
-    font-size: 2rem !important;
+    font-size: 2vh !important;
     font-family: "Raleway", sans-serif;
     text-align: left !important;
     text-transform: none;
@@ -176,7 +177,7 @@ figcaption{
 }
 
 h1.title {
-    font-size: 4rem !important;
+    font-size: 4vh !important;
     text-align: left;
     color: white;
     text-transform: none;
@@ -514,9 +515,9 @@ border-bottom: none;
 
 .reveal .slide-logo
 {
-    margin-right: 30px;
-  height: 200px !important;
-  width: 200px !important;
+    margin-right: 5vh;
+  height: 10vh !important;
+  width: 10vh !important;
   max-width: unset !important;
   max-height: unset !important;
 }
@@ -590,44 +591,4 @@ margin-top: -50px;
     font-size: 26px;
     margin: 0;
     color: var(--r-line-color);
-}
-
-.reveal span.interval_symb {
-    font-family: Oswald;
-    font-size: 50px;
-    color: #527b77;
-}
-
-.reveal span.interval_bound {
-    font-family: Oswald;
-    font-size: 50px;
-    color: #c9a008;
-}
-
-.reveal span.interval_offset {
-    font-family: Oswald;
-    font-size: 50px;
-    color: #f46000;
-}
-
-.reveal span.interval_step {
-    font-family: Oswald;
-    font-size: 50px;
-    color: var(--r-main-color);
-}
-
-.reveal .subtitle
-{
-    font-size: 14px;
-    text-align: center !important;
-}
-
-.hide{
-color: var(--r-background-color);
-}
-
-.rotated-text {
-    transform: rotate(90deg);
-    white-space: nowrap;
-    text-align: center;
 }
