@@ -28,7 +28,7 @@ resources:
   - videos/**
   - css/fonts/**
 highlight-style: github
-footer: Anniversaire de promotions 2025 <img width="5%" src="figures/by-sa.png"/> 27 septembre 2025
+footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/by-sa.png"/> 27 septembre 2025
 ---
 
 <!-- ::: {.hidden}
@@ -151,14 +151,14 @@ L’expertise demandée est devenue complexe et les choix nombreux.
 :::
 
 ::::
-::::{.col-5 .r-stack}
+::::{.col-5 .r-stack .text-center}
 :::{.fragment fragment-index=0 .fade-out}
-![Source SIAM Review 2001](figures/comp_algo_hard.jpg)
+![Source SIAM Review 2001](figures/comp_algo_hard.jpg){width=80%}
 :::
 :::{.fragment fragment-index=0 .current-visible}
-![PhD Max Duarte (2011)](figures/acc_rej_steps_ign_eps3.jpg){width=80%}
+![PhD Max Duarte (2011)](figures/acc_rej_steps_ign_eps3.jpg){width=80% .video-responsive-30}
 
-<video data-autoplay loop src="videos/ignition_Re1000.mov" />
+<video class="video-responsive-30" data-autoplay loop src="videos/ignition_Re1000.mov" />
 :::
 ::::
 :::
@@ -336,7 +336,7 @@ par rapport aux techniques classiques**
 ::::{.col .align-self-center}
 
 :::{.row}
-<video class="video-responsive" data-autoplay loop src="videos/ElectronDensity_converted.mp4"></video>
+<video class="video-responsive-25" data-autoplay loop src="videos/ElectronDensity_converted.mp4"></video>
 
 ::::{.text-center}
 densité électron
@@ -346,7 +346,7 @@ densité électron
 <br>
 
 :::{.row}
-<video class="video-responsive" data-autoplay loop src="videos/ElectronFlux_converted.mp4"></video>
+<video class="video-responsive-25" data-autoplay loop src="videos/ElectronFlux_converted.mp4"></video>
 ::::{.text-center}
 flux électron
 ::::
@@ -430,7 +430,7 @@ flux électron
 
 <br>
 
-![](figures/dark_logo_samurai.png)
+![](figures/dark_logo_samurai.png){width=80%}
 ::::
 :::
 ## HPC@Maths
