@@ -204,6 +204,10 @@ p.subtitle {
     color: var(--r-line-color)
 }
 
+.reveal .math {
+    color: var(--r-main-color);
+}
+
 .reveal hr {
     opacity: 100%;
     border-bottom: var(--r-line-color) 3px solid;
