@@ -592,3 +592,10 @@ margin-top: -50px;
     margin: 0;
     color: var(--r-line-color);
 }
+
+.video-responsive {
+    height: 30vh; /* 30% de la hauteur de la fenêtre */
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
