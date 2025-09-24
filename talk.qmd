@@ -190,183 +190,232 @@ Se situe à l’interconnection entre :
 :::
 :::::
 
-## Propulsion électrique
+---
 
-:::{.row }
-::::{.col-9}
-![](figures/plasma.png){width=100%}
-::::
-::::{.col .align-self-center .r-stack}
-![](figures/prop_schema.png){.fragment .fade-out data-fragment-index=0}
+:::::{.center-page-vertically-2}
+:::{.row}
+::::{.col-2 .align-self-center .text-center}
+![](figures/diphasique_3.png){.video-responsive-25}
 
-:::::{.fragment .current-visible data-fragment-index=0}
-:::{.row .justify-content-center}
-::::{.col-6}
-![+500 engins spatiaux équipés propulsion électrique](figures/satellite.png)
+![](figures/diphasique_4.png){.video-responsive-25}
 ::::
-::::{.col-6}
-![70% de la masse consacrée à la charge utile](figures/rocket.png)
+::::{.col .align-self-center .p-4 .border}
+
+:::{.text-center .color-0 .h1 .display-3}
+Écoulements diphasiques multi-échelles
+:::
+
+</br>
+
+:::{.text-center  .color}
+**Simulation prédictive des phénomènes physiques**
+
+**sur les nouvelles architectures de calcul**
+:::
+
+</br>
+
+- Modélisation mathématique innovante
+- Méthodes numériques de nouvelle génération
+- Développement de code de calcul open-source efficace
+
+</br>
+
+:::{.text-center .color-0 .h1 .display-3}
+Conception - sécurité - efficacité
+:::
+
 ::::
-::::{.col-6}
-![50 ans sur 10 000 processeurs pour $20 µs$ sur $10 cm^3$](figures/computer.png)
+::::{.col-2 .align-self-center .text-center}
+![](figures/diphasique_1.png){.video-responsive-25}
+
+![](figures/diphasique_2.png){.video-responsive-25}
 ::::
 :::
 :::::
 
+---
+
+:::{.center-page}
+![Source : Prof. T. Bowman - Stanford Univ.](figures/diphasique_1.png){width=60%}
+:::
+
+## Brouillard de gouttelettes : traité !
+
+:::::{.center-page-vertically-2}
+:::{.row .align-items-center}
+::::{.col-8 }
+**Brouillards de gouttes polydispersés**
+
+- Simulation prédictive de la dynamique des brouillards et de leur évaporation → Structure et dynamique de flamme
+
+:::{.color}
+**Combustion**
+:::
+
+- Propulsion liquide, solide, Booster Ariane : couplage combustion / acoustique / brouillard polydispersé (instab. thermo-acoustiques)
+
+**Turbulence gaz-gouttes fortement couplée**
+
+- Nouvelle approche aux grandes échelles - ondelettes à div. nulle
+
+</br>
+
+:::{.text-center .color-0 .h1}
+Nouvelle génération de modèles fluides et méthodes numériques précises et efficaces - HPC
+:::
+
+::::
+::::{.col .align-self-center .text-center}
+![](figures/diphasique_1.png){.video-responsive-25}
+
+<video class="video-responsive-30" data-autoplay loop src="videos/y1_y3_3d.m4v">
+</video>
+
+::::::{.row}
+:::::::{.col .text-center}
+![](figures/em2c.jpg){.video-responsive-10}
+:::::::
+:::::::{.col .text-center}
+![](figures/Seal_of_Leland_Stanford_Junior_University.svg){.video-responsive-10}
+:::::::
+:::::::{.col .text-center}
+![](figures/onera.svg){.video-responsive-10}
+:::::::
+::::::
+::::
+:::
+:::::
+
+## Atomisation - modèle unifié - rupture !
+
+:::{.row}
+::::{.col .border .align-self-center}
+
+:::{.text-center}
+**Modèles classiques**
+:::
+
+</br>
+
+Régime ***phases séparées***
+
+- Modèles eulériens de mélange bi-fluide avec fraction volumique $\alpha$
+- Faible information sur la géométrie de l’interface ($\alpha$, $\nabla \alpha$) - maillage
+
+</br>
+
+Régime ***phase dispersée***
+
+- Modèles eulériens aux moments
+- Haute information sur la géométrie de l’interface avec la distribution en taille de gouttelettes ($\alpha$, $\Sigma$, $H$, $G$)
+
+</br>
+
+:::{.color-0}
+**Thèse A. Loison, W. Haegeman**
+
+**Post-doc G. Orlando**
+:::
+::::
+::::{.col .text-center .align-self-center}
+![](figures/injection.png)
+
+<video class="video-responsive-30" data-autoplay loop src="videos/droplets-collision-3x.mp4">
+</video>
+::::
+::::{.col .border .align-self-center}
+
+:::{.text-center .color-0}
+**Modèle unifié à deux échelles**
+:::
+
+</br>
+
+:::{.border .p-1}
+::::{.color-0}
+***Grande échelle***
+::::
+
+- Modèles eulériens de mélange bi-fluide toute topologie avec fraction volumique $\alpha$
+:::
+
+</br>
+
+:::{.text-center .fs-3 .border .rounded-pill }
+Transfert inter-échelle
+
+::::{.fs-5 .small-lh}
+Atomisation primaire, coalescence
+
+géométrie de l’interface via ($\alpha$, $\nabla \alpha$)
 ::::
 :::
 
-## Physique complexe fortement multi-échelle
+</br>
 
-:::{.row }
+:::{.border .p-1 .m-2}
+::::{.color-0}
+***Petite échelle***
+::::
+
+Modèle de gouttelettes oscillantes base sur  ($\alpha^d$, $\Sigma$, $H$, $G$ + variables dynamiques)
+
+- Géom. différentielle / modèles cinétiques
+:::
+::::
+:::
+<!-- {{< include diphasique.qmd >}} -->
+
+## Atomisation - modèle unifié - simulation
+
+## Méthode Boltzmann sur réseau
+
+:::{.row}
 ::::{.col-8}
-**Enjeux**
+**Contexte**
 
-- Couche limite aux parois (gaine) détermine la corrosion et ainsi la durée de vie des propulseurs - Phénomène d’instabilités doivent être reproduits
-- Modélisation d’une physique incluant un large spectre espace/temps
-(10cm/100𝜇m, 10𝜇s/0.1ns). - Simulation abordable et prédictive
+- Simulation haute performance du bruit d’un train d'atterrissage (NASA Ames Advanced Supercomputing Division - Launch Ascent and Vehicle Aerodynamics LAVA) 2,28 milliards de degrés de liberté - 12 niveaux
+- Simulation sur machine Pleiades (2800 coeurs - deux semaines) Accélération d’un facteur 15 par rapport aux techniques classiques
+
+**Rupture : Thèse Thomas Bellotti **
+
+- Analyse numérique des méthodes (consistance / stabilité)
+- Implémentation dans un samurai : résolution de plusieurs décades de questions qui se posaient sur l’utilisation de maillage adaptés
+
+</br>
 
 :::{.text-center .color-0}
-**Modèles pertinents et outils numériques fiables et efficaces**
+**Rupture et innovation : simulation plus précise et plus performante**
 :::
 
-<br>
+</br>
 
-**Défis**
+Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de la Société de Mathématiques Appliquées et Industrielles GAMNI 2024
 
-- Extraire une hiérarchie de modèles mathématiques simples isolant chaque difficulté (non-linéarité, régimes asymptotiques)
-- Présence d’échelles multiples (interactions électrostatiques, faible masse des électrons) introduit de la “raideur” numérique
 ::::
-::::{.col .align-self-center .r-stack}
-:::{.fragment fragment-index=0 .fade-out}
-![Schéma d’un propulseur à effet Hall <br> J.P. Boeuf (2017) J. Appl. Phys.](figures/prop_schema.png)
-:::
-:::{.fragment .fade-out fragment-index=0 .current-visible}
-![Courant d’électrons dans une décharge plasmas](figures/electron_plasma.png)
-:::
-:::{.fragment}
-$$
-\begin{cases}
-\lambda^2_D = \displaystyle\frac{\epsilon_0 k_b T_e}{n_e q_e^2} \\\\
-\omega^{-1}_{pe} = \displaystyle\sqrt\frac{m_e \epsilon_0}{n_e q_e^2}
-\end{cases}
-$$
+::::{.col .text-center .align-self-center}
+<video class="video-responsive-30" data-autoplay loop src="videos/LBM_Landing_Gear_NASA.mov">
+</video>
 
-:::::{.text-center .color}
-**Limites asymptotiques**
-
-**dans certaines zones**
-:::::
-:::
-::::
-:::
-
-::::{.r-stack}
-:::{.mt-5 .color-0 .text-center .fade-out .fragment fragment-index=0}
-**Des phénomènes microscopiques génèrent des effets macroscopique, instabilités ou couches limites, et doivent être pris en compte et résolus de manière précise dans les simulations**
-:::
-
-:::{.mt-5 .color-0 .text-center .fragment fragment-index=0}
-**Approche cinétique au niveau mésoscopique et méthode PIC trop coûteuses <br> → hiérarchie de modèles fluides - méthode numérique clef**
-:::
-::::
-
-## Méthodes *asymptotic-preserving* : a game-changer
+</br>
 
 :::{.row}
-::::{.col-8 .align-self-center}
-**Méthodes numériques classiques**
-
-- Erreur de consistance et contrainte de stabilité
-$$
-err = \mathcal{O}\left(\frac{\Delta x}{\color{red}\epsilon}\right) \quad \Delta t \leq \color{red}\epsilon \Delta x
-$$
-$$
-\color{red}\epsilon = 10^{-4} \quad \Delta x \leq 10^{-6} \quad \Delta x \leq 10^{-10}
-$$
-
-- 1 millions de cellules et 10 milliards d'itérations en 1D
-
-<br>
-
-**Nouvelle gamme de méthodes**
-
-- Méthode uniformément asymptotic-preserving (AP) d’ordre élevé
-- Analyse détaillée des propriétés des algorithmes obtenus (innovation 2022, PhD L. Reboul)
-- Accélération de plusieurs ordres de grandeurs (3 à 4)
+::::{.col-8}
+<video class="video-responsive-30" data-autoplay loop src="videos/config_12_2_9_1e-3.mp4">
+</video>
 
 ::::
-::::{.col}
 
-:::{.text-center .color-0}
-**Equation hyperbolique de la chaleur**
-:::
-
-$$
-\begin{align}
-\partial_t E + \frac{1}{\epsilon} \partial_x F &= 0 \\
-\partial_t F + \frac{1}{\epsilon} \partial_x E &  = -\frac{\sigma}{\epsilon^2}F
-\end{align}
-$$
-::::
-:::
-
-## Innovation au niveau scientifique
-
-:::{.row}
-::::{.col-8 .align-self-center}
-
-**Contribution académique, PhD L. Reboul**
-
-- Première simulation d’instabilité dans les plasmas froids à basse pression partiellement magnétisés avec un modèle fluide  grâce à la précision et aux propriétés du schéma
-- Comparaison avec méthodes PIC (première académique)
-- Capture les instabilités précisément et de manière fiable
-
-:::{.text-center .color-0}
-**Nouvelles méthodes asymptotic-perserving = Rupture**
-
-**Précision augmentée et accélération d’un facteur 100
-par rapport aux techniques classiques**
-:::
-
-- Capacité de faire de l’adaptation de maillage (propriétés AP du schéma) pour accélérer le calcul et diminuer la trace mémoire en multi-D. Développement dans le code de calcul communautaire Open Source SAMURAI
-::::
 ::::{.col .align-self-center}
+![](figures/esa-6.svg)
 
-:::{.row}
-<video class="video-responsive-25" data-autoplay loop src="videos/ElectronDensity_converted.mp4"></video>
+</br>
 
-::::{.text-center}
-densité électron
-::::
-:::
-
-<br>
-
-:::{.row}
-<video class="video-responsive-25" data-autoplay loop src="videos/ElectronFlux_converted.mp4"></video>
-::::{.text-center}
-flux électron
+![](figures/cenaero.png)
 ::::
 :::
 ::::
-:::
-
-## Vers les applications scientifiques et industrielles
-
-**Performance de codes et géométries réalistes**
-
-- Adaptation dynamique de maillage (AMR/MR) / contrôle d’erreur
-- Parallélisme massif
-- Codes communautaires (collaboration)
-  - CanoP (Adaptive Mesh Refinement, AMR)
-  - SAMURAI (Multi-résolution, algèbre d’intervalle)
-
-:::{.fragment}
-**Transfert vers les autres disciplines et les industriels**
-
-- Académiques (physique des plasmas, physique solaire)
-- Industriels et instituts de recherche
 :::
 
 ## Samurai
