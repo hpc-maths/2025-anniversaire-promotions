@@ -474,6 +474,11 @@ Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de l
 ![](figures/vki_logo.webp)
 ::::
 :::
+:::{.row }
+::::{.col .align-self-center}
+![](figures/128px-LOGO_CEA_ORIGINAL_2022.svg.png){width=15%}
+::::
+:::
 
 <br>
 
