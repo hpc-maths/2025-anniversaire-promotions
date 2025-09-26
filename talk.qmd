@@ -194,14 +194,14 @@ Se situe à l’interconnection entre :
 
 :::::{.center-page-vertically-2}
 :::{.row}
-::::{.col-2 .align-self-center .text-center}
+::::{.col-3 .align-self-center .text-center}
 ![](figures/diphasique_3.png){.video-responsive-25}
 
 ![](figures/diphasique_4.png){.video-responsive-25}
 ::::
 ::::{.col .align-self-center .p-4 .border}
 
-:::{.text-center .color-0 .h1 .display-3}
+:::{.text-center .color-0 .h1 .display-5}
 Écoulements diphasiques multi-échelles
 :::
 
@@ -221,12 +221,12 @@ Se situe à l’interconnection entre :
 
 </br>
 
-:::{.text-center .color-0 .h1 .display-3}
+:::{.text-center .color-0 .h1 .display-5}
 Conception - sécurité - efficacité
 :::
 
 ::::
-::::{.col-2 .align-self-center .text-center}
+::::{.col-3 .align-self-center .text-center}
 ![](figures/diphasique_1.png){.video-responsive-25}
 
 ![](figures/diphasique_2.png){.video-responsive-25}
@@ -289,6 +289,7 @@ Nouvelle génération de modèles fluides et méthodes numériques précises et 
 
 ## Atomisation - modèle unifié - rupture !
 
+:::::{.center-page-vertically-2}
 :::{.row}
 ::::{.col .border .align-self-center}
 
@@ -319,7 +320,7 @@ Régime ***phase dispersée***
 :::
 ::::
 ::::{.col .text-center .align-self-center}
-![](figures/injection.png)
+![](figures/injection.png){.video-responsive-30}
 
 <video class="video-responsive-30" data-autoplay loop src="videos/droplets-collision-3x.mp4">
 </video>
@@ -365,9 +366,18 @@ Modèle de gouttelettes oscillantes base sur  ($\alpha^d$, $\Sigma$, $H$, $G$ + 
 :::
 ::::
 :::
+:::::
 <!-- {{< include diphasique.qmd >}} -->
 
 ## Atomisation - modèle unifié - simulation
+
+:::{.text-center}
+<video class="video-responsive-40" data-autoplay loop src="videos/large_scale_small_scale_adaptive_contours.mp4" />
+:::
+
+:::{.text-center}
+<video class="video-responsive-40" data-autoplay loop src="videos/large_scale_small_scale_adaptive_finale.mp4"/>
+:::
 
 ## Méthode Boltzmann sur réseau
 
@@ -574,7 +584,7 @@ Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de l
 ::::
 :::
 :::{.text-center .color-0 .align-self-end .mt-5}
-**Besoin de renforcer l’écosystème en particulier l’équipe d’Ingénieurs de Recherche experts en Calcul**
+**Rendu possible grâce au soutien de la Fondation**
 :::
 
 ## Remerciements
@@ -588,7 +598,7 @@ Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de l
 
 **Ecole polytechnique - IP Paris**
 
-- Gestion Laboratoire CMAP
+- CMAP
 - Unité IDCS
 - Pôle teaching and learning center
 
