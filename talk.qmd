@@ -610,9 +610,14 @@ Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de l
 
 ##
 
-:::{.center-page}
+:::::{.center-page}
+![](figures/qrcode.png){.video-responsive-20}
+
+<br>
+<br>
+
 <h4>Merci pour votre attention</h4>
 
 <br>
 [HPC@Maths](https://initiative-hpc-maths.gitlab.labos.polytechnique.fr/site/)
-:::
+:::::
