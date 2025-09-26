@@ -112,6 +112,12 @@ footer: Anniversaire de promotions <img class="video-responsive-5" src="figures/
 :::
 ::::
 
+---
+
+:::{.center-page}
+![](figures/qubit.png)
+:::
+
 ## {.center data-background-image="figures/couloir.jpg" data-background-position="left" data-background-size="50%"}
 
 ::::{.row}
@@ -444,8 +450,9 @@ Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de l
 
 - Nouvelle structure de données basée sur une algèbre d’ensembles
 - Facilité d'implémentation de nouveaux schéma (indépendant de la gestion dynamique du maillage) permettant de créer un écosystème pour les applications
-- Mise en place de nouvelles approches (ordonnancement de tâches) pour le parallélisme
 
+<br>
+<br>
 
 :::{.text-center .color-0}
 **Code communautaire Open Source**
