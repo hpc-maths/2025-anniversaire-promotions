@@ -405,7 +405,7 @@ Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de l
 
 ::::
 ::::{.col .text-center .align-self-center}
-<video class="video-responsive-30" data-autoplay loop src="videos/LBM_Landing_Gear_NASA.mov">
+<video class="video-responsive-30" data-autoplay loop src="videos/LBM_Landing_Gear_NASA_compressed.mp4">
 </video>
 
 </br>
