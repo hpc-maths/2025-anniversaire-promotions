@@ -263,7 +263,7 @@ Conception - sécurité - efficacité
 
 **Turbulence gaz-gouttes fortement couplée**
 
-- Nouvelle approche aux grandes échelles - ondelettes à div. nulle
+- Nouvelle approche aux grandes échelles - ondelettes à divergence nulle
 
 </br>
 
@@ -312,7 +312,7 @@ Régime ***phases séparées***
 
 </br>
 
-Régime ***phase dispersée***
+Régime ***phases dispersées***
 
 - Modèles eulériens aux moments
 - Haute information sur la géométrie de l’interface avec la distribution en taille de gouttelettes ($\alpha$, $\Sigma$, $H$, $G$)
@@ -368,7 +368,7 @@ géométrie de l’interface via ($\alpha$, $\nabla \alpha$)
 
 Modèle de gouttelettes oscillantes base sur  ($\alpha^d$, $\Sigma$, $H$, $G$ + variables dynamiques)
 
-- Géom. différentielle / modèles cinétiques
+- Géométrie différentielle / modèles cinétiques
 :::
 ::::
 :::
@@ -397,7 +397,7 @@ Modèle de gouttelettes oscillantes base sur  ($\alpha^d$, $\Sigma$, $H$, $G$ + 
 **Rupture : Thèse Thomas Bellotti **
 
 - Analyse numérique des méthodes (consistance / stabilité)
-- Implémentation dans un samurai : résolution de plusieurs décades de questions qui se posaient sur l’utilisation de maillage adaptés
+- Implémentation dans samurai : résolution de plusieurs décades de questions qui se posaient sur l’utilisation de maillages adaptés
 
 </br>
 
@@ -441,7 +441,7 @@ Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de l
 **Outil pour un ensemble d’applications**
 
 - Physique des plasmas (propulsion électrique, prédiction du temps solaire, electron transpiration cooling…)
-- Ecoulements diphasiques (propulsion liquide, propulsion aéronautique, moteurs à injection directe, chasse au lancement d’un missile)
+- Écoulements diphasiques (propulsion liquide, propulsion aéronautique, moteurs à injection directe, chasse au lancement d’un missile)
 - Simulation numérique directe des piles au lithium
 
 <br>
@@ -449,7 +449,7 @@ Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de l
 **Innovation**
 
 - Nouvelle structure de données basée sur une algèbre d’ensembles
-- Facilité d'implémentation de nouveaux schéma (indépendant de la gestion dynamique du maillage) permettant de créer un écosystème pour les applications
+- Facilité d'implémentation de nouveaux schémas (indépendant de la gestion dynamique du maillage) permettant de créer un écosystème pour les applications
 
 <br>
 <br>
@@ -523,8 +523,8 @@ Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de l
 ::::{.center-page-vertically-2}
 :::{.row}
 ::::{.col-6 .align-self-center}
-- Opérationnel depuis été 2021
-- 2000 coeurs de calcul pour communauté de laboratoires initiateurs
+- Opérationnel depuis l'été 2021
+- 2000 coeurs de calcul pour la communauté des laboratoires initiateurs
 - Montée en puissance à 3000 coeurs et nouveaux partenaires
 - Communauté autour des méthodes numériques de nouvelle génération et leur implémentation
 - “Computational Science” - Collaboration interdisciplinaire
@@ -542,9 +542,11 @@ Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de l
 
 - Créée en mai 2020 à l’École polytechnique
 - Inspirée de ce qui se fait dans les grandes universités (Stanford, EPFL)
-- Ensemble d’ingénieurs ASR et CALCUL en soutien aux grands projets d’infrastructure informatique de l’École et IP Paris
+- Ensemble d’ingénieurs ASR et CALCUL en soutien aux grands projets d’infrastructures informatiques de l’École et IP Paris
 - Réactivité sur évolution des infrastructures et Data Center - Soutien à la communauté
 - Vocation à devenir une Unité d’Appui à la Recherche (CNRS)
+
+<br>
 
 :::{.text-center .mt-5 .color-0}
 **Effort important mené avec succès sur ces réalisations**
@@ -628,3 +630,5 @@ Prix de thèse Paul Caseau 2024 Académie des Technologies / Prix de thèse de l
 <br>
 [HPC@Maths](https://initiative-hpc-maths.gitlab.labos.polytechnique.fr/site/)
 :::::
+
+<!-- {{< include propulsion_electrique.qmd >}} -->
